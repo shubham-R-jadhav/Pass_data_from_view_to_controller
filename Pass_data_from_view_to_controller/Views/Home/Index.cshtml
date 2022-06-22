@@ -1,0 +1,115 @@
+﻿
+@model Pass_data_from_view_to_controller.Models.Employee
+
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+
+        <section>
+
+
+            <h1>PostUsingParameters</h1>
+
+            @using (Html.BeginForm("PostUsingParameters", "Home"))
+            {
+
+                <input type="text" name="firstName" /> <br />
+
+                <input type="text" name="lastName" /> <br />
+
+                <br />
+
+                <input type="submit" value="Click me" />
+
+
+            }
+
+            <br />
+
+            <hr />
+            <hr />
+            <h1>PostUsingRequest</h1>
+            @using (Html.BeginForm("PostUsingRequest", "Home"))
+            {
+
+                <input type="text" name="firstName" /> <br />
+
+                <input type="text" name="lastName" /> <br />
+
+                <br />
+
+                <input type="submit" value="Click me" />
+
+
+            }
+
+
+
+            <br />
+
+            <hr />
+            <hr />
+            <h1>PostUsingRequest</h1>
+            @using (Html.BeginForm("PostUsingFormCollection", "Home"))
+            {
+
+                <input type="text" name="firstName" /> <br />
+
+                <input type="text" name="lastName" /> <br />
+
+                <br />
+
+                <input type="submit" value="Click me" />
+
+
+            }
+
+
+            <br />
+
+            <hr />
+            <hr />
+            <h1>PostUsingBinding</h1>
+            @using (Html.BeginForm("PostUsingBinding", "Home" , FormMethod.Post))
+            {
+
+                @Html.TextAreaFor(x => x.firstName) <br />
+                @Html.TextAreaFor(x => x.lastName) <br />
+                <br />
+
+                <input type="submit" value="Click me" />
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </section>
+
+
+    </div>
+</body>
+</html>
